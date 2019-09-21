@@ -1,4 +1,6 @@
-//# Spotify API keys
+console.log('this is loaded');
 
-SPOTIFY_ID=your-spotify-id
-SPOTIFY_SECRET=your-spotify-secret
+exports.spotify = {
+  id: process.env.SPOTIFY_ID,
+  secret: process.env.SPOTIFY_SECRET
+};
