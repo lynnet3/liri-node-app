@@ -9,7 +9,10 @@ var moment = require("moment");
 var axios = require("axios");
 var fs = require("fs");
 
-// taking what the useer wants to like 
+// taking what the useer wants to like find a concert song movie or the random option
+var action = process.argv[2];
+// taking what the user has put in to find the results 
+var input = process.argv[3];
 
 //functions to execute each action
 function concertInfo(){
