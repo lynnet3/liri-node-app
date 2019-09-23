@@ -38,18 +38,29 @@ switch (action) {
 }
 
 //functions to execute each action
-function concertInfo() {
+function concertInfo(input) {
 
 }
 
-function songInfo() {
+function songInfo(input) {
 
 }
 
-function movieInfo() {
+function movieInfo(input) {
 
 }
 
-function doThis() {
-
+function doThis(input) {
+fs.readFile("random.txt", "utf8", function(err, data){
+    // if theres an error with the code it will log the error in the console
+    if (err){
+        return console.log(err);
+    }
+    // logs out the data
+    //console.log(data);
+    // splits the info with spaces
+    var dataArry = data.split(",");
+    //will run the spotify function with the text from random.txt
+    songInfo(dataArry[1]);
+});
 }
