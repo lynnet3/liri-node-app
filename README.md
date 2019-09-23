@@ -13,4 +13,4 @@ Welcome to liri, an app similar however instead of being a Speech Interpretation
 
 For the `node liri.js cocert-this <band/artist>` command it will take whatever band or artist that the user puts in and surches the Bands in Town API and show where they are playing and when using moments "MM/DD/YYYY" format.
 
-FOr the `spotify-this-song`
+For the `spotify-this-song <song name>` it will surch Spotify and show who the artist(s) the song name a link to preview the song and what album its from. If there is nothing given then it will surch "The Sign" by Ace of Base.
