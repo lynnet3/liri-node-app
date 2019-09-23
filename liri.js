@@ -18,19 +18,38 @@ var action = process.argv[2];
 // taking what the user has put in to find the results 
 var input = process.argv[3];
 
+// the switch so when the user puts in the comand it changes to the name of the function its conneted to then stop
+switch (action) {
+    case "concert-this":
+        concertInfo(input);
+        break;
+
+    case "spotify-this-song":
+        songInfo(input);
+        break;
+
+    case "movie-this":
+        movieInfo(input);
+        break;
+
+    case "do-what-it-says":
+        doThis(input);
+        break;
+}
+
 //functions to execute each action
-function concertInfo(){
+function concertInfo() {
 
 }
 
-function songInfo(){
+function songInfo() {
 
 }
 
-function movieInfo(){
+function movieInfo() {
 
 }
 
-function doThis(){
-    
+function doThis() {
+
 }
