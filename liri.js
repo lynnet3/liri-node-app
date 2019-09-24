@@ -39,32 +39,38 @@ switch (action) {
 
 //functions to execute each action
 function concertInfo(input) {
-
+    "https://rest.bandsintown.com/artists/" + input + "/events?app_id=codingbootcamp"
 }
 
 function songInfo(input) {
-if (!input){
-    input = "The Sign"
-}
+
+    //if theres nothing put into the third argument it will make it The Sign
+    if (!input) {
+        input = "The Sign"
+    }
 }
 
 function movieInfo(input) {
-if(!input){
-    input = "Mr. Nobody"
-}
+
+    //if there nothing put into the third argument it will make it Mr. Nobody
+    if (!input) {
+        input = "Mr. Nobody"
+    }
 }
 
 function doThis(input) {
-fs.readFile("random.txt", "utf8", function(err, data){
-    // if theres an error with the code it will log the error in the console
-    if (err){
-        return console.log(err);
-    }
-    // logs out the data
-    //console.log(data);
-    // splits the info with spaces
-    var dataArry = data.split(",");
-    //will run the spotify function with the text from random.txt
-    songInfo(dataArry[1]);
-});
+   
+    fs.readFile("random.txt", "utf8", function (err, data) {
+        
+        // if theres an error with the code it will log the error in the console
+        if (err) {
+            return console.log(err);
+        }
+        // logs out the data
+        //console.log(data);
+        // splits the info with spaces
+        var dataArry = data.split(",");
+        //will run the spotify function with the text from random.txt
+        songInfo(dataArry[1]);
+    });
 }
