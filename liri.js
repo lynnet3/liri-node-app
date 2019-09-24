@@ -43,11 +43,15 @@ function concertInfo(input) {
 }
 
 function songInfo(input) {
-
+if (!input){
+    input = "The Sign"
+}
 }
 
 function movieInfo(input) {
-
+if(!input){
+    input = "Mr. Nobody"
+}
 }
 
 function doThis(input) {
