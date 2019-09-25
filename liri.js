@@ -66,6 +66,20 @@ function songInfo(input) {
     //if theres nothing put into the third argument it will make it The Sign
     if (input === "undefined") {
         input = "The Sign"
+    }else{
+        spotify.search({
+            type:"track",
+            query: input
+        })
+        .then(function(response){
+            for (var i = 0; i < response.track.items.length; i++);
+            console.log(
+                "\nAtrist: " + response.track.items[i].artist.name +
+                "\nSong: " + response.track.items[i].name +
+                "\nURL: " + response.track.items[i].preview_url +
+                "\nAlbum: " + response.track.items[i].album.name
+            );
+        })
     }
 
 }
@@ -86,8 +100,8 @@ function movieInfo(input) {
             "\nCountry: " + response.data.Country +
             "\nLanguage: " + response.data.Language +
             "\nPlot: " + response.data.Plot + 
-            "\nActors: " + response.data.Actors);
-        )
+            "\nActors: " + response.data.Actors
+        );
     })
 }
 
