@@ -38,8 +38,21 @@ switch (action) {
 }
 
 //functions to execute each action
-function concertInfo(input) {
-    "https://rest.bandsintown.com/artists/" + input + "/events?app_id=codingbootcamp"
+function concertInfo(artist) {
+    axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
+        .then(function (response) {
+            for (var i = 0; i < response.data.length; i++) {
+                if (artist === undefined) {
+                    console.log("No results found")
+                } else {
+                    console.log();
+                    console.log();
+                    var when = moment(response.data[i].datetime);
+                }
+            }
+
+
+        })
 }
 
 function songInfo(input) {
@@ -59,9 +72,9 @@ function movieInfo(input) {
 }
 
 function doThis(input) {
-   
+
     fs.readFile("random.txt", "utf8", function (err, data) {
-        
+
         // if theres an error with the code it will log the error in the console
         if (err) {
             return console.log(err);
