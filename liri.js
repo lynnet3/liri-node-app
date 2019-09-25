@@ -67,6 +67,7 @@ function songInfo(input) {
     if (input === "undefined") {
         input = "The Sign"
     }
+
 }
 
 function movieInfo(input) {
@@ -75,6 +76,7 @@ function movieInfo(input) {
     if (input === "undefined") {
         input = "Mr. Nobody"
     }
+    axios.get("https://omdbapi.com/?t=" + input + "&y=&plot")
 }
 
 function doThis(input) {
