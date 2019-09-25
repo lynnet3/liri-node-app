@@ -77,6 +77,18 @@ function movieInfo(input) {
         input = "Mr. Nobody"
     }
     axios.get("https://omdbapi.com/?t=" + input + "&y=&plot")
+    .then(function(response){
+        console.log(
+            "\nTitle: " + response.data.Title +
+            "\nYear: " + response.data.Year +
+            "\nimdb Rating: " + response.dataimdbRating +
+            "\nRotten Tomatos Rating: " + response.data.Rating[1].value +
+            "\nCountry: " + response.data.Country +
+            "\nLanguage: " + response.data.Language +
+            "\nPlot: " + response.data.Plot + 
+            "\nActors: " + response.data.Actors);
+        )
+    })
 }
 
 function doThis(input) {
