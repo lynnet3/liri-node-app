@@ -41,13 +41,19 @@ switch (action) {
 function concertInfo(artist) {
     axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp")
         .then(function (response) {
+            // for when theres multiple differnt events happening
             for (var i = 0; i < response.data.length; i++) {
-                if (artist === undefined) {
+                // if theres nothing put into the argument it will return that nothing was found
+                if (artist === "undefined") {
                     console.log("No results found")
                 } else {
-                    console.log();
-                    console.log();
                     var when = moment(response.data[i].datetime);
+                    console.log(
+                        "\n Venue: " + response.data[i].venue.name +
+                        "\n Location: " + response.data[i].venue. city +
+                        "\n Date: " + when.format("MMM Do, YYYY hh:mm:ss")
+                    );
+                    
                 }
             }
 
@@ -58,7 +64,7 @@ function concertInfo(artist) {
 function songInfo(input) {
 
     //if theres nothing put into the third argument it will make it The Sign
-    if (!input) {
+    if (input === "undefined") {
         input = "The Sign"
     }
 }
@@ -66,7 +72,7 @@ function songInfo(input) {
 function movieInfo(input) {
 
     //if there nothing put into the third argument it will make it Mr. Nobody
-    if (!input) {
+    if (input === "undefined") {
         input = "Mr. Nobody"
     }
 }
