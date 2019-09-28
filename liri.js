@@ -16,7 +16,7 @@ var fs = require("fs");
 // taking what the useer wants to like find a concert song movie or the random option
 var action = process.argv[2];
 // taking what the user has put in to find the results 
-var input = process.slice(3).join(" ");
+var input = process.argv.slice(3).join(" ");
 
 // the switch so when the user puts in the comand it changes to the name of the function its conneted to then stop
 switch (action) {
